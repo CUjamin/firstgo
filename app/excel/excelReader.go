@@ -14,5 +14,4 @@ func ReadExcel(filePath string){
 	for sheetId,sheetName := range sheetMap{
 		seelog.Info(sheetId,"=",sheetName)
 	}
-
 }
