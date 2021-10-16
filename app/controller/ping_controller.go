@@ -18,6 +18,13 @@ func GetPing(pingGin *gin.RouterGroup){
 }
 
 func (c PingController) ping(ctx *gin.Context){
-	seelog.Info("request=>",ctx.Request.GetBody)
+	seelog.Info("request=>",ctx.Request)
+	seelog.Info("request Mothed=>",ctx.Request.Method)
+	seelog.Info("request Url=>",ctx.Request.URL.Path)
+	seelog.Info("request Body=>",ctx.Request.GetBody)
+	seelog.Info("request id=>",ctx.Query("id"))
+	seelog.Info("request name=>",ctx.Query("name"))
+
+
 	response.Success(ctx,constant.GetSuccessCode,constant.GetSuccessMsg,gin.H{"message":"pong"})
 }
